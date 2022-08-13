@@ -1,0 +1,42 @@
+1. files,  since split, unmod in CURR, but modded in GIVEN:
+	- changed to versions in GIVEN (checked out from its front commit)
+	- staged
+2. files, since split, modded in CURR but unmod in GIVEN
+	- stay same
+
+3. files, since split, modded in both in same way (including deletion changes)
+	- unchanged by merge
+===========================================================================
+
+4. Files not present at split, but present only in CURR
+	- remain same
+5. Files not present in split, but present only in GIVEN
+	- checked out & staged
+
+6. Files present at split, unmod in CURR, and absent in GIVEN
+	- removed and untracked
+7. Files present in split, absent in CURR, unmod in GIVEN
+	- remain absent
+
+8. Files modded in diff ways in CURR and GIVEN are in conflict:
+    ==================================================================
+    (ie.
+    || contents of both are changed since split and diff.
+    || contents of one are changed, other file is del
+    || file was absent at split, has diff contents in given and curr)
+
+    replace contents of conf file with:
+
+    <<<<<<< HEAD
+    contents of file in current branch
+    =======
+    contents of file in given branch
+    >>>>>>>
+
+    and stage
+
+
+    note: if
+
+    ==================================================================
+
